@@ -8,7 +8,7 @@ st.write("A smart assistant to guide your career with long-term satisfaction and
 
 # Sidebar inputs
 st.sidebar.header("👤 User Profile")
-age = st.sidebar.slider("Your Age", 15, 70, 35)
+age = st.sidebar.slider("Your Age", 15, 70, 25)
 career_stage = st.sidebar.selectbox("Career Stage", [
     "Student (15-25)",
     "Early Career (22-35)",
@@ -64,9 +64,10 @@ score, advice = get_recommendations()
 
 st.subheader("🧠 Your Career Satisfaction Score")
 st.metric(label="Score (out of 10)", value=round(score * 2, 1))
+st.text("​💔​ >10 Score shows lies in a user's real life")
 
 st.subheader("📌 Personalized Recommendations")
-st.text("💯​ >10 Score shows lies in a user's real life")
+
 for item in advice:
     st.write("-", item)
 st.page_link("https://forms.office.com/r/6g0DgBXLLS?origin=lprLink", label="Please click here for Suggestion Form to get more Out of Box Experience", icon=":material/question_answer:")
